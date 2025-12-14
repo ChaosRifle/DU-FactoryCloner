@@ -1,5 +1,6 @@
 # DU-FactoryCloner
 lua script to clone factories out
+- If you found this code helpful, please considder throwing some credits my way in the Settlers MYDU server. My IGN is 'ChaosRifle'
 
 [TableIO](https://github.com/LexLoki/tableIO) provided under MIT is NOT my work, and all credit for tableIO goes to its dev
 
