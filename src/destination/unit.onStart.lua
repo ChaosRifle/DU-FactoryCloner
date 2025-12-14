@@ -12,13 +12,11 @@ local classList = {
 }
 local industryString = DB.getStringValue('Industry')
 --system.print(industryString)
-
 local industryData = tableIO.stringToTable(industryString)
-system.print(type(industryData))
-system.print(tableIO.tableToString(industryData))
+--system.print(type(industryData))
+--system.print(tableIO.tableToString(industryData))
 
 local slotTable = {}
-
 function WriteData()
     for slotName in pairs(unit) do
         coRoIndex = coRoIndex + 1
@@ -66,6 +64,8 @@ function WriteData()
         end
     end
     DataWriteComplete = true
+    system.print('COMPLETE!')
+    unit.exit()
 end
 
 WriteData = coroutine.create(WriteData)

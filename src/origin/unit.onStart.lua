@@ -46,8 +46,10 @@ function DataGather()
     
     
     local output = tableIO.tableToString(industryElementData)
-    system.print(output)
     DB.setStringValue('Industry',output)
+    system.print('COMPLETE!')
+    --system.print(output)
+    unit.exit()
 end
 DataGather = coroutine.create(DataGather)
 unit.setTimer('second',1)
