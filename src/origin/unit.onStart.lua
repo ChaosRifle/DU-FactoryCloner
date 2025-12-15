@@ -1,6 +1,6 @@
 --system.print(tableIO.tableToString(core.getElementIndustryInfoById(slot3.getLocalId())))
 
-local opLimit = 20
+local opLimit = 200
 local elementIdList = core.getElementIdList()
 system.print(#elementIdList .. ' Elements detected')
 local classList = {
@@ -32,14 +32,15 @@ function DataGather()
                     else
                         mode = 2 -- maintain number
                     end
+                    industryElementData['s' .. elementId] = {
+                        ['item'] = info.currentProducts[1].id,
+                        ['maintain'] = info.maintainProductAmount,
+                        ['mode'] = mode
+                    }
                 else
                     mode = 0
                 end
-                industryElementData['s' .. elementId] = { 
-                    ['item'] = info.currentProducts[1].id, 
-                    ['maintain'] = info.maintainProductAmount, 
-                    ['mode'] = mode 
-                }
+
             end
     end
     GatherComplete = true

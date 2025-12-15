@@ -26,7 +26,7 @@ function WriteData()
             coroutine.yield()
         end
 
-        if type(unit[slotName])=='table' and  slotName~= nil and unit[slotName].getClass ~= nil and slotName~='system' and slotName~='library' and slotName~='unit' and slotName~='export' then
+        if type(unit[slotName])=='table' and  slotName~= nil and unit[slotName].getClass ~= nil and slotName~='system' and slotName~='library' and slotName~='unit' and slotName~='export' and slotName~='DB' then
 
             slotTable[#slotTable + 1] = slotName
             system.print('added ' .. unit[slotName].getName() .. ' to the table at ' .. slotName)
