@@ -1,4 +1,4 @@
-local version = 'v1.1.0'
+local version = 'v1.1.1'
 
 local sourceInfo1 = 'Chaos FactoryCloner: ' .. version
 local sourceInfo2 = 'https://github.com/ChaosRifle/DU-FactoryCloner'
@@ -85,7 +85,7 @@ function WriteData()
         --    coroutine.yield()
         --end
 
-        if type(unit[slotName])=='table' and slotName~= nil and unit[slotName].getClass ~= nil and unit[slotName].getClass() ~= 'DataBankUnit' and slotName~='system' and slotName~='library' and slotName~='unit' and slotName~='export' then
+        if type(unit[slotName])=='table' and slotName~= nil and unit[slotName].getClass ~= nil and unit[slotName].getClass() ~= 'DataBankUnit' and unit[slotName].getClass() ~= 'CoreUnitDynamic' and slotName~='system' and slotName~='library' and slotName~='unit' and slotName~='export' then
             slotTable[#slotTable + 1] = slotName
             --system.print('added ' .. unit[slotName].getName() .. ' to the table as ' .. slotName .. ' and class of ' .. unit[slotName].getClass())
         end
@@ -129,7 +129,7 @@ function WriteData()
                 system.print('connections sid not found in master table: ' .. sid)
             end
         else --not of industry classlist type!
-            system.print('class not in industry: ' .. unit[slot].getClass() .. '\n id: ' .. id)
+            system.print('class not in industry: ' .. unit[slot].getClass() .. ' - id: ' .. id)
         end
     end
     DataWriteComplete = true
